@@ -34,7 +34,7 @@ if __name__ == "__main__":
     ser.write(tinyprint.get('title').encode())
     ser.write('\n'.encode())
     ser.write(tinyprint.get('text').encode())
-    ser.write('\n'.encode())
+    ser.write('\n\n\n'.encode())
     ser.write('#{}  upvotes: {}\n'.format(
         tinyprint.get('id'), tinyprint.get('votes')).encode())
     ser.write(tinyprint.get('created').encode())
