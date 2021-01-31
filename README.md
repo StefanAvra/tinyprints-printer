@@ -12,11 +12,12 @@ Create a venv and install requirements
 python3 -m venv venv
 pip install -r requirements.txt
 ```
-Set environment variabel for api key
+You can set the environment variabel for the api key like this
 ```sh
 export TINYPRINTS_API_PASSWORD="your secret pw"
 ```
-create a crontab to execute ```run.sh```, for example everyday at 20:00 UTC:
+You probably want to create a cron job to execute the script. Don't forget to add the env var as well.
+for example everyday at 20:00 UTC:
 ```sh
-0 20 * * * /home/pi/tinyprints-printer/run.sh
+0 20 * * * export TINYPRINTS_API_PASSWORD="your secret pw"; /home/pi/tinyprints-printer/run.sh
 ```

@@ -31,8 +31,10 @@ if __name__ == "__main__":
     print(tinyprint)
 
     ser.write(b'\x1b\x21\x00')  # reset
+    ser.write(b'\x1b\x21\x08')  # bold
     ser.write(tinyprint.get('title').encode())
     ser.write('\n'.encode())
+    ser.write(b'\x1b\x21\x00')
     ser.write(tinyprint.get('text').encode())
     ser.write('\n'.encode())
     ser.write('#{}  upvotes: {}\n'.format(
